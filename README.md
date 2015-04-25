@@ -48,3 +48,5 @@ rake db:setup   # if failed, try: bundle exec rake db:setup
 rails server    # or rails s
 
 ```
+
+Source used: http://www.group-games.com/stationary-games/mafia-game.html
