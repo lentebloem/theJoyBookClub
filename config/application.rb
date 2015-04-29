@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Lecture8
+module TheJoyBookClub
   class Application < Rails::Application
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.generators do |generate|

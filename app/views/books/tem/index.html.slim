@@ -1,0 +1,31 @@
+h1 Listing books
+
+table
+  thead
+    tr
+      th Title
+      th Author
+      th Description
+      th Amazon
+      th Ratings
+      th Finished on
+      th
+      th
+      th
+
+  tbody
+    - @books.each do |book|
+      tr
+        td = book.title
+        td = book.author
+        td = book.description
+        td = book.amazon_id
+        td = book.ratings
+        td = book.finished_on
+        td = link_to 'Show', book
+        td = link_to 'Edit', edit_book_path(book)
+        td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Book', new_book_path
