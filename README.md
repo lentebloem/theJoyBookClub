@@ -1,7 +1,7 @@
 The Joy Book Club
 =====
 
-run locally
+How to run locally
 
 ```ruby
 bundle install
@@ -11,8 +11,11 @@ rails server    # or rails s
 ```
 
 Title: The Joy Book Club
+
 Team Members: Biying Liu (Sophia), Daiwei Liu
+
 Demo Link: ____
+
 Idea: A book sharing website.
 
 Models and Description:
