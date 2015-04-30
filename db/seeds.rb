@@ -9,26 +9,25 @@ Book.destroy_all
 Genre.destroy_all
 
 fiction = Genre.create!(name: 'Fiction')
-apple = Genre.create!(name: 'Apple')
 non_fiction = Genre.create!(name: 'Non-Fiction')
 
 Book.create!([{
-    title: "Hypersion",
-    author: "Dan simmons",
-    description: "Probably my favorite science fiction book (and series) I've ever read. Hypersion is written in a stle similar to the Canterbury Tales.",
-    amazon_id: "0553283685",
+    title: "All the Light We Cannot See: A Novel",
+    author: "Anthony Doerr",
+    description: "From the highly acclaimed, multiple award-winning Anthony Doerr, the beautiful, stunningly ambitious instant New York Times bestseller about a blind French girl and a German boy whose paths collide in occupied France as both try to survive the devastation of World War II.",
+    amazon_id: "1476746583",
     rating: 5,
     finished_on: 10.days.ago,
       genres: [fiction]
 },
 {
-    title: "Jony Ive: The Genius Behind Apple's Greatest Products",
-    author: "Leander Kahney",
-    description: "even though I respect Ive, I felt this biography only hit skin deep.",
-    amazon_id: "159184617X",
+    title: "Inside Apple: How America's Most Admired--and Secretive--Company Really Works",
+    author: "Adam Lashinsky",
+    description: "I love this book! INSIDE APPLE reveals the secret systems, tactics and leadership strategies that allowed Steve Jobs and his company to churn out hit after hit and inspire a cult-like following for its products.",
+    amazon_id: "1455512168",
     rating: 4,
     finished_on: 5.days.ago,
-    genres: [non_fiction, apple]
+    genres: [non_fiction]
 },
 {
     title: "Clash of Civilization over the ELevator in Piazza Vittorio",

@@ -1,74 +1,86 @@
-<div class="container content-section text-center">
-
-  <h1>Reading List</h1>
-
+<style>
+#grad1 {
+    height:auto;
+    background: url(img/downloads-bg.jpg) cover scroll no-repeat contain top center;
+    background: -webkit-linear-gradient(#5db39d 5%, #a8e4d5 10%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5db39d 5%, #a8e4d5 10%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5db39d 5%, #a8e4d5 10%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5db39d 5%, #a8e4d5 10%); /* Standard syntax (must be last) */
+}
+</style>
+<div class="container content-section text-center" id="grad1" style="padding-top:180px;">
+  <h1 style="text-shadow: 2px 2px #888888;">Book List</h1>
   <ol class="breadcrumb">
     <li class="active">
       Books
     </li>
   </ol>
-
-  <div class='row'>
-    <div class='col-sm-12'>
-      <p>
-        <form>
-          <legend>Search</legend>
-          <div class='col-xs-4'>
-            <input type='text' class='form-control' value='<%= params[:keyword] %>' name='keyword' placeholder='Keyword' >
-          </div>
-        </form>
-      </p>
-      <p class='pull-right'>
-        <a href='#' id='show-form' class='btn btn-primary'>New Book Form</a>
-      </p>
-    </div>
-  </div>
-
-  <hr>
-
-
-  <div class='col-sm-12 book-form'>
-    <p>
-      <%= form_for(Book.new, remote: true,
-                   html: { class: 'horizontal-form' }) do |f| %>
-      <legend>New Book</legend>
-
-      <div class='col-sm-5'>
-        <div class='form-group'>
-
-<!--genre div-->
-
-        <br>
-
-        <div class='form-group'>
-          <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
-        </div>
-        <div class='form-group'>
-          <%= f.text_field :author, class: 'form-control', placeholder: 'Author' %>
-        </div>
-        <div class='form-group'>
-          <%= f.text_field :description, class: 'form-control', placeholder: 'Description' %>
-        </div>
-        <div class='form-group'>
-          <%= f.text_field :amazon_id, class: 'form-control', placeholder: 'Amazon ID' %>
-        </div>
-
-        <div class='form-group'>
-          <legend>rating</legend>
-          <% (1..5).each do |rating| %>
-            <label class='radio-inline'>
-              <%= rating %><%= f.radio_button :rating, rating %>
-            </label>
-          <% end %>
-        </div>
-
-        <div class='form-group'>
-          <%= f.submit class: 'btn btn-primary' %>
+    <div style="float:right; width: 30%;">
+      <div class='row'>
+        <div class='col-sm-12'>
+          <p>
+            <form style="    padding-left: 15%;   padding-right: 15%;">
+              <legend>Search</legend>
+              <div>
+                <input type='text' class='form-control' value='<%= params[:keyword] %>' name='keyword' placeholder='Keyword'  style="width: 100%;">
+              </div>
+            </form>
+          </p>  
         </div>
       </div>
-      <% end %>
-    </p>
-  </div>
+
+      <hr>
+      <div class='col-sm-12 book-form'>
+    <!--
+          <p class='pull-right'>
+            <a href='#' id='show-form' class='btn btn-primary'>New Book Form</a>
+          </p>
+    -->
+        <p>
+          <%= form_for(Book.new, remote: true,
+                       html: { class: 'horizontal-form' }) do |f| %>
+          <legend>New Book</legend>
+
+
+    <!--    New Book Form    -->
+          <div  style="align-self: auto; padding-left: 15%; padding-right: 15%;">
+            <div class='form-group' style="width:100&" >
+
+    <!--genre div-->
+
+            <br>
+
+            <div class='form-group'>
+              <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+            </div>
+            <div class='form-group'>
+              <%= f.text_field :author, class: 'form-control', placeholder: 'Author' %>
+            </div>
+            <div class='form-group'>
+              <%= f.text_field :description, class: 'form-control', placeholder: 'Description' %>
+            </div>
+            <div class='form-group'>
+              <%= f.text_field :amazon_id, class: 'form-control', placeholder: 'Amazon ID' %>
+            </div>
+
+            <div class='form-group'>
+              <legend>rating</legend>
+              <% (1..5).each do |rating| %>
+                <label class='radio-inline'>
+                  <%= rating %><%= f.radio_button :rating, rating %>
+                </label>
+              <% end %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.submit class: 'btn btn-primary' %>
+            </div>
+          </div>
+          <% end %>
+        </p>
+      </div>
+    </div>
+</div>
 
 
   <div class="row">
@@ -76,10 +88,10 @@
       <ul class="list-unstyled book-list">
 
         <%= render @books %>
-
+         
       </ul>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4" >
       <h2>Genres</h2>
       <ul class="list-unstyled">
         <% @genres.each do |genre| %>
@@ -90,5 +102,6 @@
         <% end %>
       </ul>
     </div>
+      </br>
   </div>
-</div>
+

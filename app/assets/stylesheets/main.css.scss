@@ -77,3 +77,15 @@ body {
     border-bottom: 0;
   }
 }
+
+.top-of-book-page {
+    background: url(..img/downloads-bg.jpg) no-repeat bottom center scroll;
+    height: auto;
+    color: #fff;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-top: 0px;
+}
