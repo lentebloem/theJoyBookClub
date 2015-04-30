@@ -5,12 +5,13 @@
 #  id          :integer          not null, primary key
 #  title       :string(255)
 #  author      :string(255)
-#  description :string(255)
+#  description :text
 #  amazon_id   :string(255)
-#  ratings     :integer
-#  finished_on :date
 #  created_at  :datetime
 #  updated_at  :datetime
+#  rating      :integer
+#  finished_on :date
+#  keywords    :text
 #
 
 class Book < ActiveRecord::Base

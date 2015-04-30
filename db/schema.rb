@@ -11,22 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429091842) do
+ActiveRecord::Schema.define(version: 20150430005922) do
 
   create_table "book_genres", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "book_genres", ["book_id"], name: "index_book_genres_on_book_id"
+  add_index "book_genres", ["genre_id"], name: "index_book_genres_on_genre_id"
+
   create_table "books", force: true do |t|
     t.string   "title"
     t.string   "author"
-    t.string   "description"
+    t.text     "description"
     t.string   "amazon_id"
-    t.integer  "ratings"
-    t.date     "finished_on"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rating"
+    t.date     "finished_on"
+    t.text     "keywords"
   end
 
   create_table "follows", force: true do |t|
@@ -37,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150429091842) do
   end
 
   create_table "genres", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
