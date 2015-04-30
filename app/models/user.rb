@@ -17,17 +17,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  enum role: [ :mafia, :police, :doctor, :townspeople, :moderator ]
-    
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-
-  has_many :quits
-
-  validates :name, presence: true
-    
-  has_many :follows, foreign_key: :follower_id
-  has_many :followed_users, through: :follows, source: :followed
-  has_many :followed_users_quits, through: :followed_users, source: :quits 
-  # has_many :followed_users_readings, through: :followed_users, source: :readings 
+         :recoverable, :rememberable, :trackable, :validatable
 end

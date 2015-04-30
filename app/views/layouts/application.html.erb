@@ -63,12 +63,24 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
+                    <% if user_signed_in? %>
+                    <li>
+                      Logged in as <strong><%= current_user.email %></strong>.
+                  </li>
+                  <li>
+                      <%= link_to 'Edit profile', edit_user_registration_path %> 
+                  </li>
+                  <li>
+                      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                  </li>
+                    <% else %>
+                    <li>
+                      <%= link_to "Sign up", new_user_registration_path %> 
+                  </li>
+                  <li>
+                      <%= link_to "Login", new_user_session_path  %>
+                    <% end %>
                     </li>
-<!--
-                   <li>
-                        <a class="page-scroll" href="login">Log in</a>
-                    </li>
--->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -76,7 +88,16 @@
         <!-- /.container -->
     </nav>
 
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
+    
     <!-- Footer -->
     <footer>
         <div class="container text-center">

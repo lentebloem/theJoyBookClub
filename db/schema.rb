@@ -11,28 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430005922) do
+ActiveRecord::Schema.define(version: 20150430203913) do
 
   create_table "book_genres", force: true do |t|
-    t.integer  "book_id"
-    t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "book_genres", ["book_id"], name: "index_book_genres_on_book_id"
-  add_index "book_genres", ["genre_id"], name: "index_book_genres_on_genre_id"
-
   create_table "books", force: true do |t|
     t.string   "title"
     t.string   "author"
-    t.text     "description"
+    t.string   "description"
     t.string   "amazon_id"
+    t.integer  "ratings"
+    t.date     "finished_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rating"
-    t.date     "finished_on"
-    t.text     "keywords"
   end
 
   create_table "follows", force: true do |t|
@@ -43,28 +37,42 @@ ActiveRecord::Schema.define(version: 20150430005922) do
   end
 
   create_table "genres", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
-  create_table "quits", force: true do |t|
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "readers", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "role",                   default: 0
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "readers", ["email"], name: "index_readers_on_email", unique: true
+  add_index "readers", ["reset_password_token"], name: "index_readers_on_reset_password_token", unique: true
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

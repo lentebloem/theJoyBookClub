@@ -42,7 +42,6 @@ gem 'better_errors'
 gem 'binding_of_caller'
 
 
-gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -55,4 +54,11 @@ gem 'devise'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+
+# The gem files that are not introduced in class
 gem 'friendly_id', '~> 5.1.0'
+
+gem 'therubyracer'
+gem 'omniauth'
+gem 'omniauth-digitalocean'
