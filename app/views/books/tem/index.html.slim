@@ -7,7 +7,7 @@ table
       th Author
       th Description
       th Amazon
-      th Ratings
+      th Rating
       th Finished on
       th
       th
@@ -20,7 +20,7 @@ table
         td = book.author
         td = book.description
         td = book.amazon_id
-        td = book.ratings
+        td = book.rating
         td = book.finished_on
         td = link_to 'Show', book
         td = link_to 'Edit', edit_book_path(book)

@@ -23,10 +23,9 @@ Models and Description:
 has name, email, and many comments and questions
 ####Book
 has title, author, picture, descriptions, rating, finished or not.
-####Readings
+####Book_Genre
 belongs to a book and a user, serve as a relationship betwee book and user.
 #### Features:
 Users can log in, create a book, and see other users' books.
 
 Division of Labor:
-Biying Liu: everything

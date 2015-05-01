@@ -40,7 +40,7 @@ gem 'awesome_print'
 gem 'annotate'
 gem 'better_errors'
 gem 'binding_of_caller'
-
+gem 'foundation-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -57,8 +57,7 @@ gem 'binding_of_caller'
 
 
 # The gem files that are not introduced in class
-gem 'friendly_id', '~> 5.1.0'
-
 gem 'therubyracer'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'omniauth-digitalocean'

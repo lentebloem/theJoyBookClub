@@ -32,6 +32,24 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '691164481009376',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -43,7 +61,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="/">
                     <i class="fa fa-play-circle"></i> the Joy <span class="light">Reading</span> Club
                 </a>
             </div>
@@ -59,13 +77,14 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#browse">Browse</a>
+                        <a class="page-scroll" href="#browse">Browse </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Contact </a>
+                    </li>
                     <% if user_signed_in? %>
-                    <li>
-                      Logged in as <strong><%= current_user.email %></strong>.
+                    <li style="margin-top:15px;">
+                      <span style="color: #c8f4b5;"><%= current_user.email %></span> 
                   </li>
                   <li>
                       <%= link_to 'Edit profile', edit_user_registration_path %> 
@@ -89,20 +108,28 @@
     </nav>
 
 
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+
+    
+    
+   
 
     <%= yield %>
     
+</br></br>
+     <span>
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+    </span>
     <!-- Footer -->
     <footer>
         <div class="container text-center">
             <p>Copyright &copy; the Joy Reading Club 2015</p>
         </div>
+
     </footer>
 
     <!-- jQuery -->

@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :author
       t.string :description
       t.string :amazon_id
-      t.integer :ratings
+      t.integer :rating
       t.date :finished_on
 
       t.timestamps
