@@ -14,7 +14,8 @@ Title: The Joy Book Club
 
 Team Members: Biying Liu (Sophia), Daiwei Liu
 
-Demo Link: ____
+Demo Link: http://railsproj-joyreadingclub.rhcloud.com
+(Heroku doesn't accomodate sqlite3, so I had to change to other sources. To show that I already master how to use heroku, you can find that I have published my first project on heroku! Link: https://rails-proj1.herokuapp.com/)
 
 Idea: A book sharing website.
 
