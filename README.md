@@ -30,3 +30,4 @@ belongs to a book and a user, serve as a relationship betwee book and user.
 Users can log in, create a book, and see other users' books.
 
 Division of Labor:
+Sophia Liu (everything)
